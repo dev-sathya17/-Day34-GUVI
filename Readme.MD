@@ -34,7 +34,7 @@ create database zenclass;
 
     > - Establishing Leaderboard by Batch.
 
-        ```
+        `
         SELECT s.STUDENT_ID,
         s.STUDENT_NAME,
         SUM(ts.GRADE + p.MARKS + mi.MARKS) as TOTAL_MARKS
@@ -53,11 +53,11 @@ create database zenclass;
         s.STUDENT_ID, s.STUDENT_NAME
         ORDER BY
         TOTAL_MARKS DESC;
-        ```
+        `
 
     > - Today's Session for a batch.
 
-        ```
+        `
         SELECT
         s.SESSION_ID,
         s.MEETING_LINK,
@@ -75,22 +75,22 @@ create database zenclass;
         s.BATCH_ID = 1
         AND s.SESSION_DATE = CURDATE();
 
-        ```
+        `
 
     > - Fetch me the number of Students who have added a feedback to a given session.
 
-        ```
+        `
         SELECT
         COUNT(DISTINCT STUDENT_ID) AS NUMBER_OF_STUDENTS
         FROM
         Feedbacks
         WHERE
         SESSION_ID = 1;
-        ```
+        `
 
     > - Most number of Leave taken by a student.
 
-        ```
+        `
         SELECT
         STUDENT_ID,
         COUNT(*) AS NUM_LEAVE_APPLICATIONS
@@ -101,4 +101,4 @@ create database zenclass;
         ORDER BY
         NUM_LEAVE_APPLICATIONS DESC
         LIMIT 1;
-        ```
+        `
